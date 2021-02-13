@@ -15,13 +15,13 @@ You need to have node and npm on you machine.
 Clone the repo in a directory:
 ``git clone https://github.com/Sim007/cicdfe``
 
-Install npm modules (package json):
+Install npm modules (package json):  
 ``npm install``
 
-You also need yarn to run cypress:
+You also need yarn to run cypress:  
 ``npm install --global yarn``
 
-Now you can run cypress with: 
+Now you can run cypress with:   
 ``yarn run cypress open``
 ## Learn Cypress
 Add several specs.js in integration/examples 
