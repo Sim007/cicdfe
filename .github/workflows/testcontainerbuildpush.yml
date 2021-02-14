@@ -1,7 +1,7 @@
 # GitHub action based on build-push-action
 # Build test container with cypress with specs
 # Push container to GitHub package  
-name: Publish docker image
+name: Build and push testcontainer
 on: push
 jobs:
   push_to_registries:
