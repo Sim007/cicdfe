@@ -1,0 +1,22 @@
+# GitHub action based on build-push-action
+# Build test container with cypress with specs
+# Push container to GitHub package  
+name: Publish docker image
+on: push
+jobs:
+  push_to_registries:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          context: ./cypressd
+          file: ./cypressd/Dockerfile
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: sim007/cicdfe/testcontainer
+          tag_with_ref: true

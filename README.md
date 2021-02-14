@@ -41,7 +41,7 @@ You also need yarn to run cypress:
 
 Now you can run cypress with:   
 ``yarn run cypress open``
-## Cypress: run from a docker container (desktop)
+## Cypress: run from a docker container (laptop)
 ### Goal
 Run cypress from a container so you are absolute sure that you have the same node_modules with each run
 ### Prereq
@@ -81,10 +81,21 @@ Output:
 Cypress output test on the laptop.
 Written files are on the laptop directory (done with mount) 
 
-## Case
-
+## Cypress + GitHub action build + run docker cypress container
 ### Goal
+Two actions build + push and run
+- Build and push container with Cypress test (GitHub action)
+- Run Cypress test container (GitHub action)
+Everything done in the browser. No software needed on laptop
 ### Prereq
+- this repo
+- in cypress/cypressd a Dockerfile with base image (cypress complete) + cypress json + tests
+
+Build manually and run:
+''
+cd ./cypress/cypressd
+docker build -t testcontainer .
+docker container run -it -w /e2e testcontainer
 
 ### Sources
 ### Scenario 
