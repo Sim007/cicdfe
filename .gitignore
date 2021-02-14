@@ -1,1 +1,3 @@
 node_modules
+/cypressd/cypress/*
+!/cypressd/cypress/integration
