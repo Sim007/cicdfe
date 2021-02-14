@@ -1,21 +1,14 @@
 # GitHub action based on 
 # Run test container with cypress with specs
 
-name: run testcontainer
+name: Run testcontainer
 on: push
 jobs:
-  push_to_registries:
+  testcontainer:
     runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-
-      - name: Run container
-        uses: addnab/docker-run-action@v1
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          image: sim007/cicdfe/testcontainer:latest
-          options: -it -w /e2e
+    username: ${{ github.actor }}
+    password: ${{ secrets.GITHUB_TOKEN }}
+    registry: docker.pkg.github.com
+    container: sim007/cicdfe/testcontainer:latest
+    options: -it -w /e2e
           
