@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Login GitHub packages
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -22,6 +22,5 @@ jobs:
           # repository: sim007/cicdfe/testcontainer
       - name: Docker commands  
         run: docker version
-
       - name: Docker run testconatiner    
         run: docker container run -w /e2e docker.pkg.github.com/sim007/cicdfe/testcontainer   
