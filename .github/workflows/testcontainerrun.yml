@@ -12,7 +12,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-
       - name: Login GitHub packages
         uses: docker/login-action@v1
         with:
@@ -26,5 +25,3 @@ jobs:
         run: docker container run hello-world  
       - name: Docker run testcontainer from GitHub packages  
         run: docker container run -w /e2e docker.pkg.github.com/sim007/cicdfe/testcontainer:latest  
-      - name: Docker run testcontainer from ghcr.io    
-        run: docker container run -w /e2e ghcr.io/sim007/cicdfe/testcontainer:latest
