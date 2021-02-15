@@ -20,9 +20,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           # repository: sim007/cicdfe/testcontainer
-      - name: Docker commands  
+      - name: Docker version  
         run: docker version
-      - name: Docker commands  
+      - name: Docker run hello-world 
         run: docker container run hello-world  
-      - name: Docker run testcontainer    
-        run: docker container run -w /e2e docker.pkg.github.com/sim007/cicdfe/testcontainer:main  
+      - name: Docker run testcontainer from GitHub packages  
+        run: docker container run -w /e2e docker.pkg.github.com/sim007/cicdfe/testcontainer:latest  
+      - name: Docker run testcontainer from ghcr.io    
+        run: docker container run -w /e2e ghcr.io/sim007/cicdfe/testcontainer:latest

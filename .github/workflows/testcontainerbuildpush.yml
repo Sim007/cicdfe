@@ -9,14 +9,24 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1 
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+      - name: Login GitHub packages
+        uses: docker/login-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com    
+      - name: build and push to GitHub
+        uses: docker/build-push-action@v2
         with:
           context: ./cypressd
           file: ./cypressd/Dockerfile
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: sim007/cicdfe/testcontainer
-          tag_with_ref: true
+          push: true
+          tags: 
+            docker.pkg.github.com/sim007/cicdfe/testcontainer:latest
+            ghcr.io/sim007/cicdfe/testcontainer:latest
