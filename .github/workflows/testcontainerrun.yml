@@ -1,5 +1,5 @@
-# GitHub action based on 
-# Run test container with cypress with specs
+# GitHub action based on https://github.com/metcalfc/docker-action-examples/blob/main/.github/workflows/nightly.yml 
+# Run testcontainer with specs
 
 # GitHub action based on google.nl
 # Build test container with cypress with specs
@@ -7,22 +7,21 @@
 name: Run testcontainer
 on: push
 jobs:
-  push_to_registries:
+  docker:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
 
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+      - name: Login GitHub packages
+        uses: docker/build-push-action@v2
         with:
-          context: ./cypressd
-          file: ./cypressd/Dockerfile
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: sim007/cicdfe/testcontainer
-          tag_with_ref: true
+          # repository: sim007/cicdfe/testcontainer
+      - name: Docker commands  
+        run: docker version
 
-      - name: docker container ls    
-          
+      - name: Docker run testconatiner    
+        run: docker build -t testcontainer . docker container run -it -w /e2e testcontainer    

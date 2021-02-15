@@ -81,7 +81,7 @@ Output:
 Cypress output test on the laptop.
 Written files are on the laptop directory (done with mount) 
 
-## Cypress + GitHub action build cypress test container
+## Cypress + GitHub action build aand push cypress test container
 
 ![Build and push testcontainer](https://github.com/Sim007/cicdfe/workflows/Build%20and%20push%20testcontainer/badge.svg)
 ### Goal
@@ -104,6 +104,7 @@ Na elke commit een nieuwe build and push naar github package
 
 ## Cypress + GitHub action build + run docker cypress container
 
+![Run testcontainer](https://github.com/Sim007/cicdfe/workflows/Run%20testcontainer/badge.svg)
 
 ### Goal
 Two actions build + push and run
@@ -111,7 +112,7 @@ Two actions build + push and run
 - Run Cypress test container (GitHub action)
 Everything done in the browser. No software needed on laptop
 ### Prereq
-- this repo
+- this repo?
 - in cypress/cypressd a Dockerfile with base image (cypress complete) + cypress json + tests
 
 Build manually and run:
