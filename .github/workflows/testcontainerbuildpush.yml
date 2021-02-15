@@ -22,4 +22,4 @@ jobs:
           file: ./cypressd/Dockerfile
           push: true
           tags: 
-            docker.pkg.github.com/sim007/cicdfe/testcontainer
+            docker.pkg.github.com/sim007/cicdfe/testcontainer:latest

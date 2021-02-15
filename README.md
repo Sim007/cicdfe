@@ -118,7 +118,8 @@ Two actions and run
 Everything done in the browser. No software needed on laptop  
 To do:
 Naar version @2 en ghcr.io
-Let op: tag is main GH packages
+Let op: tag is main GH packages  
+Pull by tag is depricated  
 ### Prereq
 - this repo?
 - in cypress/cypressd a Dockerfile with base image (cypress complete) + cypress json + tests
@@ -130,8 +131,15 @@ docker build -t testcontainer .
 docker container run -it -w /e2e testcontainer
 
 ### Sources
-### Scenario 
-- Testcontainer ready to use in registry (GitHub packages)
+### Workflow 1 - new container in GitHub packages
+- Only workflow run testcontainer is enabled
+- Make a change, commit and push
+- In actions you see testresult in actions
+### Workflow 2 - Run testcontainer
+- In actions rerun the workflow run testcontainer
+
+
+
 ## <Case>
 
 ### Goal
