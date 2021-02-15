@@ -87,10 +87,15 @@ Written files are on the laptop directory (done with mount)
 ### Goal
 1 actions build + push
 - Build and push container with Cypress test (GitHub action)
-Everything done in the browser. No software needed on laptop
+- Build Dockerfile in ./cypress (werkt niet met @1)
+Everything done in the browser. No software needed on laptop  
+To do:  
+Let op: tag latest werkt niet. Default is main.
+Wat is ghcr.io. Naar grcr.io - Geen credentials!
+
 ### Prereq
 - this repo
-- in cypress/cypressd a Dockerfile with base image (cypress complete) + cypress json + tests
+- in ./cypressd a Dockerfile with base image (cypress complete) + cypress json + tests
 - versie 1
 
 Build manually and run:
@@ -100,17 +105,20 @@ docker build -t testcontainer .
 docker container run -it -w /e2e testcontainer
 ### Sources
 ### Scenario
-Na elke commit een nieuwe build and push naar github package 
+Na elke commit een nieuwe build and push naar github package
 
-## Cypress + GitHub action build + run docker cypress container
+## Cypress + GitHub action pull + run cypress testcontainer
 
 ![Run testcontainer](https://github.com/Sim007/cicdfe/workflows/Run%20testcontainer/badge.svg)
 
 ### Goal
-Two actions build + push and run
+Two actions and run
 - Pull container image from GitHub package (build in another GitHub action)
 - Run Cypress test container (GitHub action)
-Everything done in the browser. No software needed on laptop
+Everything done in the browser. No software needed on laptop  
+To do:
+Naar version @2 en ghcr.io
+Let op: tag is main GH packages
 ### Prereq
 - this repo?
 - in cypress/cypressd a Dockerfile with base image (cypress complete) + cypress json + tests
@@ -123,7 +131,7 @@ docker container run -it -w /e2e testcontainer
 
 ### Sources
 ### Scenario 
-
+- Testcontainer ready to use in registry (GitHub packages)
 ## <Case>
 
 ### Goal
