@@ -24,4 +24,4 @@ jobs:
       - name: Docker run hello-world 
         run: docker container run hello-world  
       - name: Docker run testcontainer from GitHub packages  
-        run: docker container run -w /e2e docker.pkg.github.com/sim007/cicdfe/testcontainer:main  
+        run: docker container run -w /e2e docker.pkg.github.com/sim007/cicdfe/testcontainer:latest  
