@@ -81,12 +81,33 @@ Output:
 Cypress output test on the laptop.
 Written files are on the laptop directory (done with mount) 
 
-## Cypress + GitHub action build + run docker cypress container
+## Cypress + GitHub action build cypress test container
 
 ![Build and push testcontainer](https://github.com/Sim007/cicdfe/workflows/Build%20and%20push%20testcontainer/badge.svg)
 ### Goal
-Two actions build + push and run
+1 actions build + push
 - Build and push container with Cypress test (GitHub action)
+Everything done in the browser. No software needed on laptop
+### Prereq
+- this repo
+- in cypress/cypressd a Dockerfile with base image (cypress complete) + cypress json + tests
+- versie 1
+
+Build manually and run:
+''
+cd ./cypress/cypressd
+docker build -t testcontainer .
+docker container run -it -w /e2e testcontainer
+### Sources
+### Scenario
+Na elke commit een nieuwe build and push naar github package 
+
+## Cypress + GitHub action build + run docker cypress container
+
+
+### Goal
+Two actions build + push and run
+- Pull container image from GitHub package (build in another GitHub action)
 - Run Cypress test container (GitHub action)
 Everything done in the browser. No software needed on laptop
 ### Prereq
