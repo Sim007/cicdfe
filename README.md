@@ -82,6 +82,8 @@ Cypress output test on the laptop.
 Written files are on the laptop directory (done with mount) 
 
 ## Cypress + GitHub action build + run docker cypress container
+
+![Build and push testcontainer](https://github.com/Sim007/cicdfe/workflows/Build%20and%20push%20testcontainer/badge.svg)
 ### Goal
 Two actions build + push and run
 - Build and push container with Cypress test (GitHub action)
