@@ -24,4 +24,4 @@ jobs:
         run: docker version
 
       - name: Docker run testconatiner    
-        run: docker container run -it -w /e2e testcontainer    
+        run: docker container run -w /e2e testcontainer    
