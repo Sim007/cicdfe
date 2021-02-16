@@ -2,7 +2,7 @@
 # Run cypress test in testcontainer
 
 # GitHub action based on google.nl
-name: TestcontainerRun
+name: TestcontainerPullAndRun
 on: push
 jobs:
   TestcontainerPullAndRun:
