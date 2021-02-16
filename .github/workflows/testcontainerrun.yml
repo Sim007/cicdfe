@@ -2,12 +2,10 @@
 # Run testcontainer with specs
 
 # GitHub action based on google.nl
-# Build test container with cypress with specs
-# Push container to GitHub package  
-name: Run testcontainer
+name: TestcontainerPullAndRun
 on: push
 jobs:
-  docker:
+  InitAndLogin:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -18,7 +16,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          # repository: sim007/cicdfe/testcontainer
+          # repository: sim007/cicdfe/testcontainer   
       - name: Docker version  
         run: docker version
       - name: Docker run hello-world 
