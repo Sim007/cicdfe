@@ -81,9 +81,10 @@ Output:
 Cypress output test on the laptop.
 Written files are on the laptop directory (done with mount) 
 
-## Cypress + GitHub action build aand push cypress test container
+## Cypress + GitHub action build and push cypress test container
 
-![Build and push testcontainer](https://github.com/Sim007/cicdfe/workflows/Build%20and%20push%20testcontainer/badge.svg)
+![TestcontainerBuildAndPush](https://github.com/Sim007/cicdfe/workflows/TestcontainerBuildAndPush/badge.svg)
+
 ### Goal
 1 actions build + push
 - Build and push container with Cypress test (GitHub action)
@@ -109,8 +110,7 @@ Na elke commit een nieuwe build and push naar github package
 
 ## Cypress + GitHub action pull + run cypress testcontainer
 
-![Run testcontainer](https://github.com/Sim007/cicdfe/workflows/Run%20testcontainer/badge.svg)
-
+![TestcontainerPullAndRun](https://github.com/Sim007/cicdfe/workflows/TestcontainerPullAndRun/badge.svg)
 ### Goal
 Two actions and run
 - Pull container image from GitHub package (build in another GitHub action)
