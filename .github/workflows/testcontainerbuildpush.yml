@@ -1,4 +1,4 @@
-# GitHub action based on build-push-action
+# GitHub action based on build-push-action -
 # Build testcontainer with cypress and specs
 # Push testcontainer to GitHub package  
 name: TestcontainerBuildAndPush
