@@ -1,0 +1,28 @@
+# GitHub action based on https://github.com/metcalfc/docker-action-examples/blob/main/.github/workflows/nightly.yml 
+# Run cypress test in testcontainer
+
+# GitHub action based on google.nl
+name: TestDaily
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '15 21 * * *'
+jobs:
+  TestDaily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Login GitHub packages
+        uses: docker/login-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          # repository: sim007/cicdfe/testcontainer   
+      - name: Docker version  
+        run: docker version
+      - name: Docker run hello-world 
+        run: docker container run hello-world  
+      - name: Docker run testcontainer from GitHub packages  
+        run: docker container run -w /e2e docker.pkg.github.com/sim007/cicdfe/testcontainer:latest  
