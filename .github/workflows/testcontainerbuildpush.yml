@@ -1,10 +1,10 @@
 # GitHub action based on build-push-action
-# Build test container with cypress with specs
-# Push container to GitHub package  
-name: Build and push testcontainer
+# Build testcontainer with cypress and specs
+# Push testcontainer to GitHub package  
+name: Testcontainer build and push
 on: push
 jobs:
-  push_to_registries:
+  TestcontainerBuildAndPush:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo

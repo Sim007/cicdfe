@@ -1,8 +1,8 @@
 # GitHub action based on https://github.com/metcalfc/docker-action-examples/blob/main/.github/workflows/nightly.yml 
-# Run testcontainer with specs
+# Run cypress test in testcontainer
 
 # GitHub action based on google.nl
-name: TestcontainerPullAndRun
+name: TestcontainerRun
 on: push
 jobs:
   TestcontainerPullAndRun:
