@@ -5,7 +5,7 @@
 name: TestcontainerPullAndRun
 on: push
 jobs:
-  InitAndLogin:
+  TestcontainerPullAndRun:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
