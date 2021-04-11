@@ -138,7 +138,8 @@ docker container run -it -w /e2e testcontainer
 ### Workflow 2 - Run testcontainer
 - In actions rerun the workflow run testcontainer
 
-
+## Run daily
+After 60 disabled
 
 ## <Case>
 
